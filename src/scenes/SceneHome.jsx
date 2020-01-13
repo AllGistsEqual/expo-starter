@@ -4,11 +4,10 @@ import { connect } from 'react-redux'
 import {
     StyleSheet,
     ImageBackground,
-    View,
-    Text,
 } from 'react-native'
 import { blueprint } from '../../assets'
 import NavigationButton from '../components/NavigationButton'
+import Panel from '../components/Panel'
 
 const SceneHome = (props) => {
     const {
@@ -17,15 +16,14 @@ const SceneHome = (props) => {
 
     return (
         <ImageBackground source={blueprint} resizeMode="repeat" style={styles.container}>
-            <View>
-                <Text>
-                    {`${name} (v${version})`}
-                </Text>
+
+            <Panel title={`${name} (v${version})`}>
                 <NavigationButton
                     title="go to Settings >>"
                     target="Settings"
                 />
-            </View>
+            </Panel>
+
         </ImageBackground>
     )
 }

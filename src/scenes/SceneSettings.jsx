@@ -2,20 +2,22 @@ import React from 'react'
 import {
     StyleSheet,
     ImageBackground,
-    View,
     Text,
 } from 'react-native'
 import { blueprint } from '../../assets'
 import NavigationButton from '../components/NavigationButton'
+import Panel from '../components/Panel'
 
 const SceneSettings = () => (
     <ImageBackground source={blueprint} resizeMode="repeat" style={styles.container}>
-        <View>
+
+        <Panel title="Settings Page">
             <Text>
-                Settings Page
+                Lorem Ipsum
             </Text>
             <NavigationButton title="<< Back to home" target="Home" />
-        </View>
+        </Panel>
+
     </ImageBackground>
 )
 

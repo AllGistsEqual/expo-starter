@@ -21,7 +21,7 @@ const AppNavigator = createAppContainer(
             App: AppStack,
         },
         {
-            initialRouteName: 'AppLoading', // set 'AppLoading' for loading screen
+            initialRouteName: 'App', // set 'AppLoading' for loading screen
         }
     )
 )
