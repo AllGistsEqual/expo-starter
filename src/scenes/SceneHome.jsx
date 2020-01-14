@@ -1,43 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import {
-    StyleSheet,
-    ImageBackground,
-} from 'react-native'
+import { ImageBackground } from 'react-native'
 import { blueprint } from '../../assets'
 import NavigationButton from '../components/NavigationButton'
 import Panel from '../components/Panel'
+import styles from '../styles'
 
-const SceneHome = (props) => {
-    const {
-        applicationState: { version, name },
-    } = props
+const SceneHome = ({ applicationState: { version, name } }) => (
+    <ImageBackground source={blueprint} resizeMode="repeat" style={styles.container}>
 
-    return (
-        <ImageBackground source={blueprint} resizeMode="repeat" style={styles.container}>
+        <Panel title={`${name} (v${version})`}>
+            <NavigationButton
+                title="go to Settings >>"
+                target="Settings"
+            />
+        </Panel>
 
-            <Panel title={`${name} (v${version})`}>
-                <NavigationButton
-                    title="go to Settings >>"
-                    target="Settings"
-                />
-            </Panel>
-
-        </ImageBackground>
-    )
-}
-
-const styles = StyleSheet.create({
-    container: {
-        width: '100%',
-        height: '100%',
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#000',
-    },
-})
+    </ImageBackground>
+)
 
 SceneHome.propTypes = {
     applicationState: PropTypes.object.isRequired,
